@@ -1,0 +1,11 @@
+
+curl --location --request POST 'https://australiaeast.api.cognitive.microsoft.com/sts/v1.0/issueToken' \
+--header 'Content-type: application/x-www-form-urlencoded' \
+--header 'Content-Length: 0' \
+--header 'Ocp-Apim-Subscription-Key: SUBSCRIPTION_KEY'
+
+curl --location --request POST 'https://australiaeast.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US' \
+--header 'Transfer-Encoding: chunked' \
+--header 'Content-type: audio/wav;codec="audio/pcm";' \
+--header 'Authorization: Bearer ACCESS_TOKEN' \
+--data-binary '@/C:/Users/abc/Downloads/Welcome.wav'
